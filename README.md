@@ -1,14 +1,14 @@
-# Deblur-NeRF
+# Neural Parameterization
 
-This is the repository that contains source code for the [Deblur-NeRF website](https://limacv.github.io/deblurnerf/).
+This is the repository that contains source code for the [NeP website](https://limacv.github.io/neuvf_web/).
 
 If you find it useful for your work please cite:
 ```
-@article{ma2021deblur,
-      title   ={Deblur-NeRF: Neural Radiance Fields from Blurry Images},
-      author  ={Ma, Li and Li, Xiaoyu and Liao, Jing and Zhang, Qi and Wang, Xuan and Wang, Jue and Sander, Pedro V},
-      journal ={arXiv preprint arXiv:2111.14292},
-      year    ={2021}
+@article{ma2022neural,
+      title   ={Neural Parameterization for Dynamic Human Head Editing},
+      author  ={Ma, Li and Li, Xiaoyu and Liao, Jing and Wang, Xuan and Zhang, Qi and Wang, Jue and Sander, Pedro},
+      journal ={arXiv preprint arXiv:2207.00210},
+      year    ={2022}
 }
 ```
 

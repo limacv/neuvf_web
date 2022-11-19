@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="webpage for paper: Neural Parameterization for Dynamic Human Head Editing">
+  <meta name="keywords" content="NeP, NeUVF, Neural Parameterization, NeRF, NeRF Editing, Dynamic NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neural Parameterization</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Neural Parameterization for Dynamic Human Head Editing</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://limacv.github.io/homepage/">Ma Li</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://xiaoyu258.github.io/">Li Xiaoyu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://liaojing.github.io/html/">Liao Jing</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xuanwangvc.github.io/">Wang Xuan</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Zhang Qi</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://juewang725.github.io/">Wang Jue</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cse.ust.hk/~psander/">Pedro V. Sander</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The Hong Kong University of Science and Technology</span>
+            <span class="author-block"><sup>2</sup>Tencent AI Lab</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>3</sup>City University of Hong Kong</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2207.00210"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Arxiv</span>
+                </a>
+              </span>
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://limacv.github.io/neuvf_web/pdf/SIGGRAPH2022_Final.pdf"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://limacv.github.io/neuvf_web/pdf/SIGGRAPH2022_Supple.pdf"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supple</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/limacv/NeUVF"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="images/teaser.jpg">
+      <h2 class="subtitle has-text-centered">
+        We propose a new representation, NeP, which achieves explicit editing of dynamic 3D human heads
+        by introducing explicit parameters into implicit NeRF-like representations.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Implicit radiance functions emerged as a powerful scene representation for
+            reconstructing and rendering photo-realistic views of a 3D scene. These
+            representations, however, suffer from poor editability. On the other hand,
+            explicit representations such as polygonal meshes allow easy editing but
+            are not as suitable for reconstructing accurate details in dynamic human
+            heads, such as fine facial features, hair, teeth, and eyes. In this work, we
+            present <b>Neural Parameterization (NeP)</b>, a hybrid representation that provides 
+            the advantages of both implicit and explicit methods. NeP is capable
+            of photo-realistic rendering while allowing fine-grained editing of the scene
+            geometry and appearance. We first disentangle the geometry and appearance by
+            parameterizing the 3D geometry into 2D texture space. We enable
+            geometric editability by introducing an explicit linear deformation blending
+            layer. The deformation is controlled by a set of sparse key points, which can
+            be explicitly and intuitively displaced to edit the geometry. For appearance,
+            we develop a hybrid 2D texture consisting of an explicit texture map for easy
+            editing and implicit view and time-dependent residuals to model temporal
+            and view variations. We compare our method to several reconstruction and
+            editing baselines. The results show that the NeP achieves almost the same
+            level of rendering accuracy while maintaining high editability.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Pipeline. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Pipeline</h2>
+        <div class="pipeline">
+          <img src="images/pipeline.png"
+                 class="pipeline image"
+                 alt="pipeline image"/>
+          <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            We disentangle a dynamic radiance field to a geometry representation and appearance representation. The geometry
+            is composed of an explicit deformation field controlled by sparse control points, and an implicit UV and density field that maps any 3D position to a 2D
+            texture coordinate. The appearance is made up of an explicit texture map shared by all the frames, and a MLP that models all the view and time dependent
+            effects on the map.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Pipeline. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video results</h2>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <p>This video takes around 80MB of data. </p>
+        <video id="supple" controls height="100%">
+          <source src="images/siggraph22_video.mov"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ma2022neural,
+      title={Neural Parameterization for Dynamic Human Head Editing},
+      author={Ma, Li and Li, Xiaoyu and Liao, Jing and Wang, Xuan and Zhang, Qi and Wang, Jue and Sander, Pedro},
+      journal={arXiv preprint arXiv:2207.00210},
+      year={2022}
+    }
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The source code of this website is borrowed from 
+            <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+          </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/limacv/deblurnerf">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
